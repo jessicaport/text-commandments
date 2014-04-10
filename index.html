@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="Keywords" content="the text commandments, ten commandments for texting, texting rules, text etiquette, texting etiquette"><meta name="The Text Commandments" content="The Text Commandments">
-    <link href="./css/textcommandments.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="css/textcommandments.css" rel="stylesheet" type="text/css" media="screen">
     <link rel="icon" type="image/ico" href="./images/favicon.ico">
-    <script type="text/javascript">
-
+    <script>
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-38455078-1']);
       _gaq.push(['_trackPageview']);
@@ -16,39 +16,59 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-
     </script>
-      
-    <title>The Text Commandments</title>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="//use.typekit.net/wia6hes.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <title>The Text Commandments</title>
+
   </head>
 
   <body>
-
-    <div id="container">
-    	<h1>The Text Commandments</h1>
-    	<ol>
-      	<li>Thou shalt not allow autocorrect blunders to embarrass thyself.</li>
-      	<li>Recognizing that others have a life, thou shalt not expect immediate responses to text messages.  When an immediate response is not forthcoming, thou shalt refrain from sending additional texts.</li>
-      	<li>Thou shalt clearly label sarcastic texts with "jk", "haha", or with an appropriate emoticon.</li>
-      	<li>Thou shalt understand the incredible nausea inducing potential of emoticons, and refrain from their overuse.</li>
-      	<li>Thou shalt neither instigate nor promote text arguments ("textguments").</li>
-      	<li>Thou shalt label as cowards those who dump a significant other through texting.</li>
-      	<li>Thou shalt not text thy parents nor grandparents unless they initiate texting with you, instead preferring to call them regularly.</li>
-      	<li>Thou shalt not drunk text, unless texting another drunk.</li>
-      	<li>Texting shall not be relied upon solely to arrange first dates.</li>
-      	<li>Thou shalt honor the company of thy mother and father, family and friends by not texting while in their presence, that your days may be long.</li>
-    	</ol>		
-    </div>
-  	
-  	<footer>
-    	<ul>
-    		<li>Have a commandment? Email <a href="mailto:god@textcommandments.com">god (at) textcommandments.com</a></li>
-    		<li class="last">Commandments delivered by <a href="http://www.jessicaportdesign.com/">Jessica Port Design</a></li>
+    <section id="home" data-type="background" data-speed="10" class="pages">     
+      <article id="commandments" class="slideInDown">
+        <h1>The Text Commandments</h1>
+        <ol>
+          <li>Thou shalt not allow autocorrect blunders to embarrass thyself.</li>
+          <li>Recognizing that others have a life, thou shalt not expect immediate responses to text messages.  When an immediate response is not forthcoming, thou shalt refrain from sending additional texts.</li>
+          <li>Thou shalt clearly label sarcastic texts with "jk", "haha", or with an appropriate emoticon.</li>
+          <li>Thou shalt understand the incredible nausea inducing potential of emoticons, and refrain from their overuse.</li>
+          <li>Thou shalt neither instigate nor promote text arguments ("textguments").</li>
+          <li>Thou shalt label as cowards those who dump a significant other through texting.</li>
+          <li>Thou shalt not text thy parents nor grandparents unless they initiate texting with you, instead preferring to call them regularly.</li>
+          <li>Thou shalt not drunk text, unless texting another drunk.</li>
+          <li>Texting shall not be relied upon solely to arrange first dates.</li>
+          <li>Thou shalt honor the company of thy mother and father, family and friends by not texting while in their presence, that your days may be long.</li>
+        </ol>   
+      </article>
+    </section>
+    
+    <footer>
+      <ul>
+        <li>Have a commandment? Email <a href="mailto:god@textcommandments.com">god (at) textcommandments.com</a></li>
+        <li class="last">Commandments delivered by <a href="http://www.jessicaportdesign.com/">Jessica Port Design</a></li>
       </ul>
-  	</footer>
-  	
+    </footer>
+    
   </body>
+  <script>
+    $(document).ready(function(){
+      var $window = $(window);
+        $('section[data-type="background"]').each(function(){
+            var $bgobj = $(this); // assigning the object
+         
+            $(window).scroll(function() {
+                var yPos = -($window.scrollTop() / $bgobj.data('speed')); 
+                 
+                // Put together our final background position
+                var coords = '50% '+ yPos + 'px';
+     
+                // Move the background
+                $bgobj.css({ backgroundPosition: coords });
+            }); 
+        });    
+    });
+  </script>
+
 </html>
